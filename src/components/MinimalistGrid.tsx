@@ -36,7 +36,7 @@ const dppData = [
     { title: "Laws of Motion & Friction", url: "https://theacademics.in/wp-content/uploads/2022/08/5B-Laws-of-motion-Friction-Exercise.pdf" }
 ];
 
-export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' | 'notes' }) {if (type === 'short-notes') {
+export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' | 'notes' | 'blog' | 'home' }) {
     return <CategorizedNotes />;
   }if (type === 'dpp') {
     return <CategorizedDPP />;
