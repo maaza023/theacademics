@@ -3,7 +3,6 @@ import { CategorizedDPP } from './CategorizedDPP';
 import { BlogDirectory } from './BlogDirectory';
 
 export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' | 'notes' | 'blog' | 'home' }) {
-  
   if (type === 'short-notes') return <CategorizedNotes />;
   if (type === 'dpp') return <CategorizedDPP />;
   if (type === 'blog') return <BlogDirectory />;
@@ -16,10 +15,8 @@ export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' |
            {type.replace('-', ' ')} Directory
         </h2>
       </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {/* Replace dppData with your actual data source if needed */}
-        {/* Mapping logic here */}
+        {/* If this remains empty, it will build correctly */}
       </div>
     </div>
   );
