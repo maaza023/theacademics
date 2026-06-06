@@ -175,4 +175,4 @@ export const blogPosts: BlogPost[] = [
       <p>I found that concept of physics is totally conceptual book, if you feel any difficulty about any concept you just follow this book solve the numerical related to that topic, of this book, your concept is cleared.</p>
     `
   }
-];
+];  

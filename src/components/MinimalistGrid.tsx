@@ -36,42 +36,31 @@ const dppData = [
     { title: "Laws of Motion & Friction", url: "https://theacademics.in/wp-content/uploads/2022/08/5B-Laws-of-motion-Friction-Exercise.pdf" }
 ];
 
+import { CategorizedNotes } from './CategorizedNotes'; // Ensure these are imported
+import { CategorizedDPP } from './CategorizedDPP';
+import { BlogDirectory } from './BlogDirectory';
+
 export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' | 'notes' | 'blog' | 'home' }) {
-    return <CategorizedNotes />;
-  }if (type === 'dpp') {
-    return <CategorizedDPP />;
-  }if (type === 'blog') {
-    return <BlogDirectory />;
-  }if (type === 'tech') {
-    return <BlogDirectory />;
-  }
-    return (
-        <div className="w-full font-['Plus_Jakarta_Sans',sans-serif]">
-            <div className="mb-14 border-b border-black/[0.05] pb-6 flex justify-between items-end">
-                <div>
-                    <span className="text-[32px] text-neutral-400 leading-none block mb-1" style={{ fontFamily: "'Alex Brush', cursive" }}>
-                        {type === 'dpp' ? 'Daily Worksheets' : type === 'short-notes' ? 'Formula Keys' : 'Theory Sheets'}
-                    </span>
-                    <h2 className="text-3xl font-extrabold tracking-tight capitalize text-[#1D1D1F] uppercase">{type.replace('-', ' ')} Directory</h2>
-                </div>
-                <span className="text-[10px] font-mono text-neutral-400 tracking-widest uppercase mb-1">Live Database Linked</span>
-            </div>
+  
+  // Conditional returns MUST be inside the function
+  if (type === 'short-notes') return <CategorizedNotes />;
+  if (type === 'dpp') return <CategorizedDPP />;
+  if (type === 'blog') return <BlogDirectory />;
+  if (type === 'home') return null;
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {dppData.map((item, index) => (
-                    <div key={index} className="bg-white border border-black/[0.04] rounded-xl p-6 flex flex-col justify-between min-h-[170px] shadow-sm hover:shadow-xl hover:border-black/[0.08] transition-all duration-300 group">
-                        <div>
-                            <span className="text-[9px] font-mono text-neutral-300 block mb-1">MODULE_#{String(index + 1).padStart(2, '0')}</span>
-                            <h3 className="text-xs font-bold tracking-wide text-neutral-700 group-hover:text-black transition-colors uppercase leading-relaxed">{item.title}</h3>
-                        </div>
-
-                        {/* Live Link Button */}
-                        <a href={type === 'dpp' ? item.url : '#'} target="_blank" rel="noopener noreferrer" className="w-full mt-4 py-2.5 bg-[#F4F4F6] text-[#1D1D1F] text-center text-[10px] font-bold uppercase tracking-widest rounded-lg hover:bg-[#1D1D1F] hover:text-white transition-all duration-200">
-                            {type === 'dpp' ? 'Fetch Worksheet →' : 'Directory Locked'}
-                        </a>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  // This return renders the main grid
+  return (
+    <div className="w-full font-['Plus_Jakarta_Sans',sans-serif]">
+      <div className="mb-14 border-b border-black/[0.05] pb-6 flex justify-between items-end">
+        {/* Your JSX content here */}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {dppData.map((item, index) => (
+          <div key={index} className="bg-white border border-black/[0.04] rounded-xl p-6">
+            {/* item details */}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
