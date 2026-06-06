@@ -1,8 +1,8 @@
-import { CategorizedNotes } from './CategorizedNotes';
-import { CategorizedDPP } from './CategorizedDPP';
-import { BlogDirectory } from './BlogDirectory';
+import CategorizedNotes from './CategorizedNotes';
+import CategorizedDPP from './CategorizedDPP';
+import BlogDirectory from './BlogDirectory';
 
-export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' | 'notes' | 'blog' | 'home' }) {
+export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' | 'notes' | 'blog' | 'home' }) 
   if (type === 'short-notes') return <CategorizedNotes />;
   if (type === 'dpp') return <CategorizedDPP />;
   if (type === 'blog') return <BlogDirectory />;
@@ -20,4 +20,3 @@ export default function MinimalistGrid({ type }: { type: 'dpp' | 'short-notes' |
       </div>
     </div>
   );
-}
