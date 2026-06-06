@@ -4,7 +4,6 @@ import StudioHero from '../components/StudioHero';
 import MinimalistGrid from '../components/MinimalistGrid';
 
 export default function Home() {
-  // Update this line at the top of your page.tsx
 const [currentView, setCurrentView] = useState<'home' | 'dpp' | 'short-notes' | 'notes' | 'blog'>('home');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
