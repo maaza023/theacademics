@@ -1,4 +1,4 @@
-import CategorizedNotes from './CategorizedNotes';
+iimport CategorizedNotes from './CategorizedNotes';
 import CategorizedDPP from './CategorizedDPP';
 import BlogDirectory from './BlogDirectory';
 
