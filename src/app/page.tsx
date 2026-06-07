@@ -46,8 +46,6 @@ const [currentView, setCurrentView] = useState<'home' | 'dpp' | 'short-notes' | 
             </div>
           )}
         </div>
-        <button onClick={() => setCurrentView('short-notes')} className="hover:text-neutral-500 transition-colors">Features</button>
-        <button onClick={() => setCurrentView('notes')} className="hover:text-neutral-500 transition-colors">Explore</button>
         </div>
       </nav>
 
