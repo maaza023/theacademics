@@ -25,6 +25,9 @@ export default function MinimalistGrid({ type }: MinimalistGridProps) {
   if (type === 'blog') return <BlogDirectory />;
   if (type === 'home') return null;
 
+  // Prevent TypeScript narrowing error by casting to string
+  const displayType = type as string;
+
   // 2. The main grid return
   return (
     <div className="w-full font-['Plus_Jakarta_Sans',sans-serif]">
@@ -32,10 +35,10 @@ export default function MinimalistGrid({ type }: MinimalistGridProps) {
       <div className="mb-14 border-b border-black/[0.05] pb-6 flex justify-between items-end">
         <div>
           <span className="text-[32px] text-neutral-400 leading-none block mb-1" style={{ fontFamily: '"Alex Brush", cursive' }}>
-            {type === 'dpp' ? 'Daily Worksheets' : 'Directory'}
+            {displayType === 'dpp' ? 'Daily Worksheets' : 'Directory'}
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight capitalize text-[#1D1D1F] uppercase">
-            {type.replace('-', ' ')} Directory
+            {displayType.replace('-', ' ')} Directory
           </h2>
         </div>
         <span className="text-[10px] font-mono text-neutral-400 tracking-widest uppercase mb-1">
@@ -57,8 +60,8 @@ export default function MinimalistGrid({ type }: MinimalistGridProps) {
             </div>
 
             {/* Live Link Button */}
-            <a href={type === 'dpp' ? item.url : '#'} target="_blank" rel="noopener noreferrer" className="w-full mt-4 py-2.5 bg-[#F4F4F6] text-[#1D1D1F] text-center text-[10px] font-bold uppercase tracking-wider rounded">
-              {type === 'dpp' ? 'Fetch Worksheet ↗' : 'Directory Locked'}
+            <a href={displayType === 'dpp' ? item.url : '#'} target="_blank" rel="noopener noreferrer" className="w-full mt-4 py-2.5 bg-[#F4F4F6] text-[#1D1D1F] text-center text-[10px] font-bold uppercase tracking-wider rounded">
+              {displayType === 'dpp' ? 'Fetch Worksheet ↗' : 'Directory Locked'}
             </a>
           </div>
         ))}

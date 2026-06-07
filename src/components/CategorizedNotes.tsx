@@ -27,8 +27,7 @@ const noteCategories = {
 };
 
 export default function CategorizedNotes() {
-  return (<div>...</div>);
-}
+  return (
     <div className="w-full">
       {/* Header Section */}
       <div className="mb-16 flex justify-between items-end border-b border-black/[0.05] pb-8">

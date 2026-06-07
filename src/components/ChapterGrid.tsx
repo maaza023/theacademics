@@ -1,5 +1,5 @@
-import CategorizedNotes from './CategorizedNotes';
 'use client';
+import CategorizedNotes from './CategorizedNotes';
 
 const chaptersList = [
     "Newton's Laws of Motion (NLM) - Level 1 Assignment",
@@ -54,7 +54,7 @@ export default function ChapterGrid({ type }: { type: 'dpp' | 'short-notes' | 'n
                         </div>
 
                         <button className="w-full py-2 bg-white/5 border border-white/10 text-neutral-300 group-hover:bg-white group-hover:text-black text-[10px] font-bold uppercase tracking-widest rounded-lg transition-all duration-200">
-                            {type === 'dpp' ? 'Fetch Assignment' : type === 'short-notes' ? 'Fetch Formulas' : 'Download Document PDF'}
+                            {type === 'dpp' ? 'Fetch Assignment' : 'Download Document PDF'}
                         </button>
                     </div>
                 ))}
